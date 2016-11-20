@@ -3,12 +3,12 @@ package com.group.improve.improvegrouptestproject;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 
 public class ImpGroupEditText extends EditText
@@ -17,6 +17,8 @@ public class ImpGroupEditText extends EditText
      * Paint Object used to paint limit text.
      */
     private Paint limit_text_paint;
+
+    private Paint linePaint;
 
     /**
      * Current size of text displayed in the EditView.
@@ -39,14 +41,16 @@ public class ImpGroupEditText extends EditText
      */
     public static final int UNLIMITED= -100;
 
+
+    private static final int mHeigthFont=17;
+
     /**
      * LimitedEditText constructor.
      * @param context Context that will display this view.
      * @param attrs Set of attributes defined for this view.
      * @param defStyle Style defined for this view.
      */
-    public ImpGroupEditText(Context context, AttributeSet attrs, int defStyle)
-    {
+    public ImpGroupEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initComponents(attrs);
     }
@@ -55,8 +59,7 @@ public class ImpGroupEditText extends EditText
      * @param context Context that will display this view.
      * @param attrs Set of attributes defined for this view.
      */
-    public ImpGroupEditText(Context context, AttributeSet attrs)
-    {
+    public ImpGroupEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         initComponents(attrs);
     }
@@ -64,8 +67,7 @@ public class ImpGroupEditText extends EditText
      * LimitedEditText constructor.
      * @param context Context that will display this view.
      */
-    public ImpGroupEditText(Context context)
-    {
+    public ImpGroupEditText(Context context) {
         super(context);
         initComponents(null);
     }
@@ -74,11 +76,23 @@ public class ImpGroupEditText extends EditText
      * Initialize the UI components.
      * @param attrs Set of attributes defined for this view.
      */
-    private void initComponents(AttributeSet attrs)
-    {
+    private void initComponents(AttributeSet attrs) {
+
+
+
+        this.setPadding(
+                 this.getPaddingLeft()
+                ,this.getPaddingTop()
+                ,this.getRight()
+                ,this.getPaddingBottom()+mHeigthFont);
+
+        linePaint=new Paint();
+        linePaint.setColor(getResources().getColor(R.color.greyBack));
+        linePaint.setStrokeWidth(4f);
+
         limit_text_paint= new Paint();
-        limit_text_paint.setColor(Color.GRAY);
-        limit_text_paint.setTextSize(20);
+        limit_text_paint.setColor(getResources().getColor(R.color.greyBack));
+        limit_text_paint.setTextSize(this.mHeigthFont);
         maximum_text_size= UNLIMITED;
         current_text_size= 0;
         if(attrs!=null) //android:maxLength
@@ -98,6 +112,21 @@ public class ImpGroupEditText extends EditText
             @Override
             public void onTextChanged(CharSequence s, int start, int before,int count) {}
         });
+
+
+
+
+        this.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    linePaint.setColor(getResources().getColor(R.color.yellow));
+                }else {
+                    linePaint.setColor(getResources().getColor(R.color.greyBack));
+                }
+            }
+        });
+
     }
 
     /**
@@ -154,7 +183,11 @@ public class ImpGroupEditText extends EditText
             return;
 
         String text= current_text_size+"/"+maximum_text_size;
-        canvas.drawText(text, getLimitIndicatorX(text), getLimitIndicatorY(text), limit_text_paint);
+        canvas.drawText(text, getLimitIndicatorX(text), getHeight(), limit_text_paint);
+
+        float heigth=getHeight()-this.mHeigthFont;
+
+        canvas.drawLine(0,heigth,getWidth(),heigth,linePaint);
     }
 
 }

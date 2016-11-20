@@ -6,6 +6,6 @@
 
 
     <color name="greyBack">#EEEEEE</color>
-    <color name="green">#02786C</color>
-    <color name="yellow">#FEC107</color>
+    <color name="green">#009688</color>
+    <color name="yellow">#fec107</color>
 </resources>

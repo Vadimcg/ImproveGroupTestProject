@@ -11,7 +11,34 @@
     <style name="ActivityTheme">
         <!-- Customize your theme here. -->
         <item name="android:background">@color/greyBack</item>
+    </style>
 
+    <style name="InputPanelTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:background">@color/green</item>
+    </style>
+
+    <style name="TextTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TitleStyleTheme" parent="TextTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleTheme" parent="TextTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="EditTextTheme" >
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/yellow</item>
+        <item name="android:textColorHint">@color/greyBack</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>
