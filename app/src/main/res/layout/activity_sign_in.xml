@@ -8,17 +8,93 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.group.improve.improvegrouptestproject.RegistrationActivity"
+    tools:context="com.group.improve.improvegrouptestproject.SignInActivity"
     android:theme="@style/ActivityTheme"
-    android:background="@color/green">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+    <TextView
+        android:text="@string/si_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="20"
-        style="@style/EditTextTheme"
-        android:hint="Username"
-        android:textSize="12sp" />
+        android:layout_above="@+id/si_cl_input_panel"
+        android:id="@+id/si_tv_title"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        style="@style/TitleStyleTheme"
+        android:theme="@style/TitleStyleTheme" />
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/si_cl_input_panel"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/common_margin"
+        android:layout_marginRight="@dimen/common_margin"
+        android:layout_height="220dp">
+
+        <LinearLayout
+            android:id="@+id/si_ll_input_panel"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="true"
+            android:background="@color/green"
+            android:layout_height="180dp">
+
+            <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                android:hint="@string/si_username_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:background="@color/green"
+                android:theme="@style/EditTextTheme"
+                style="@style/EditTextTheme"
+                android:id="@+id/si_et_username"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/rigth_margin"
+                android:layout_marginLeft="@dimen/left_margin" />
+
+            <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                android:hint="@string/si_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:background="@color/green"
+                android:theme="@style/EditTextTheme"
+                style="@style/EditTextTheme"
+                android:layout_marginRight="@dimen/rigth_margin"
+                android:layout_marginLeft="@dimen/left_margin"
+                android:layout_marginTop="@dimen/space_between"
+                android:id="@+id/si_et_pass" />
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/si_ll_input_panel"
+            app:fabSize="normal"
+            app:layout_anchor="@id/si_ll_input_panel"
+            app:layout_anchorGravity="bottom|right|end"
+            android:id="@+id/si_fb_action"
+            android:src="@drawable/ic_done_white_256dp"
+            android:layout_marginRight="10dp"
+            app:backgroundTint="@color/yellow" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+    <TextView
+        android:text="@string/si_reg"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/si_tv_reg"
+        android:layout_centerInParent="true"
+        android:theme="@style/TextStyleTheme"
+        style="@style/TextStyleTheme"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>
+

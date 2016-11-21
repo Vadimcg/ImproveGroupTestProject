@@ -9,4 +9,11 @@
     <string name="si_reg">Not one of us? Sign up here!</string>
 
 
+    <!-- Strings related to registration -->
+    <string name="r_title">Fine choice!\nYou\'re gonna love our app.</string>
+    <string name="r_fullname_edit_text">Fullname</string>
+    <string name="r_username_edit_text">Username</string>
+    <string name="r_password_edit_text">Password</string>
+    <string name="r_email_edit_text">Email adress</string>
+    <string name="r_birth">Birth</string>
 </resources>

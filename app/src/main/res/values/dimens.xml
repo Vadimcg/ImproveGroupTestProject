@@ -10,5 +10,5 @@
     <dimen name="top_margin">48dp</dimen>
     <dimen name="left_margin">32dp</dimen>
     <dimen name="rigth_margin">16dp</dimen>
-    <dimen name="space_between">8dp</dimen>
+    <dimen name="space_between">16dp</dimen>
 </resources>
