@@ -7,7 +7,9 @@
     <string name="si_username_edit_text">Username</string>
     <string name="si_password_edit_text">Password</string>
     <string name="si_reg">Not one of us? Sign up here!</string>
-
+    <string name="si_error_username_empty">Field \'Username\'  can\'t be empty!</string>
+    <string name="si_error_password_empty">Field \'Password\'  can\'t be empty!</string>
+    <string name="si_error_not_be_found">User with such username and password wasn\'t found!</string>
 
     <!-- Strings related to registration -->
     <string name="r_title">Fine choice!\nYou\'re gonna love our app.</string>
@@ -16,4 +18,8 @@
     <string name="r_password_edit_text">Password</string>
     <string name="r_email_edit_text">Email adress</string>
     <string name="r_birth">Birth</string>
+
+    <string name="r_error_username_empty">Field \'Username\'  can\'t be empty!</string>
+    <string name="r_error_password_empty">Field \'Password\'  can\'t be empty!</string>
+    <string name="r_error_email_empty">Field \'Email\'  can\'t be empty!</string>
 </resources>
