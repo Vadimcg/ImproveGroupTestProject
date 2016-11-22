@@ -1,9 +1,9 @@
 package com.group.improve.improvegrouptestproject;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 
+import com.group.improve.improvegrouptestproject.elements.ImpGroupEditText;
 import com.group.improve.improvegrouptestproject.presenters.SignInPresenter;
 
 /**
@@ -15,11 +15,17 @@ public class SignInActivity extends ImpGroupActivity{
     public  ImpGroupEditText getUserName(){
         return this.mUserName;
     }
+    public  String getUserNameValue(){
+        return this.mUserName.getText().toString();
+    }
+
     private ImpGroupEditText mPassword;
     public ImpGroupEditText getPassword(){
         return  this.mPassword;
     }
-
+    public  String getPasswordValue(){
+        return this.mPassword.getText().toString();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

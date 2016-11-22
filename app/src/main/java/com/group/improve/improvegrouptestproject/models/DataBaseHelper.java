@@ -20,6 +20,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
 
+    private static final String DEBUG_TEG="DB_HELPER";
+
     private SQLiteDatabase myDataBase;
     public  SQLiteDatabase getMyDataBase(){
         return    this.myDataBase;
@@ -29,7 +31,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     private Context mCurrentContext;
 
     private static final String DB_NAME= "improve_group.sqlite";
-    private static final String LOG_NAME= "DataBaseHelper";
 
     public DataBaseHelper(Context context){
         super(context,DB_NAME, null, DATABASE_VERSION);
@@ -50,7 +51,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 this.checkDataBase();
             }
             catch (IOException e){
-                    Log.e("DataBaseHelper", "Error copying database");
+                    Log.e(DEBUG_TEG, "Error copying database");
 
                 throw new Error("Error copying database");
             }
@@ -68,7 +69,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
         }
         catch(SQLiteException e){
-                Log.v(LOG_NAME, "There are not db");
+                Log.v(DEBUG_TEG, "There are not db");
         }
 
         if(checkDB != null){
@@ -105,7 +106,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
         }
         catch(SQLiteException e){
-                Log.v(LOG_NAME, "DB doen't be opened");
+                Log.v(DEBUG_TEG, "DB doen't be opened");
         }
     }
 

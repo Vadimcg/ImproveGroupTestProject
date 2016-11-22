@@ -1,4 +1,4 @@
-package com.group.improve.improvegrouptestproject;
+package com.group.improve.improvegrouptestproject.elements;
 
 
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
+
+import com.group.improve.improvegrouptestproject.R;
 
 public class ImpGroupEditText extends EditText
 {

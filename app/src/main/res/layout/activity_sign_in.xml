@@ -42,7 +42,7 @@
             android:background="@color/green"
             android:layout_height="180dp">
 
-            <com.group.improve.improvegrouptestproject.ImpGroupEditText
+            <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                 android:hint="@string/si_username_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:layout_marginRight="@dimen/rigth_margin"
                 android:layout_marginLeft="@dimen/left_margin" />
 
-            <com.group.improve.improvegrouptestproject.ImpGroupEditText
+            <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                 android:hint="@string/si_password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

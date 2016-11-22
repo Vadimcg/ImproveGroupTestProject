@@ -1,26 +1,18 @@
 package com.group.improve.improvegrouptestproject.models;
 
-import android.database.sqlite.SQLiteDatabaseCorruptException;
-import android.database.sqlite.SQLiteException;
-import android.util.Log;
 
-/**
- *  Класс от которого наследуются все мэнеджеры таблиц
- *
- */
- abstract class CommonTableHelper   {
+import com.group.improve.improvegrouptestproject.helpers.ImproveGroupApplication;
 
+abstract class CommonTableHelper   {
     /**
-     * Table name
-     */
-     String TABLE_NAME = "";
-
-    /**
-    * Мэнеджер базы данных
+    * Table name
     */
+    String TABLE_NAME = "";
     DataBaseHelper dbhelper;
 
-
-
+    public CommonTableHelper(){
+        this.dbhelper=
+                ImproveGroupApplication.getDbManager().getDbhelper();
+    }
 
 }

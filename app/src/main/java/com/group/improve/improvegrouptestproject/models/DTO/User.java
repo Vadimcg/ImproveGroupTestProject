@@ -42,6 +42,10 @@ public class User {
         return mHash;
     }
 
+    public boolean compareHashes(String hash){
+        return this.mHash.equals(hash.hashCode());
+    }
+
     public void setmHash(String mHash) {
         this.mHash = mHash;
     }
@@ -62,9 +66,14 @@ public class User {
         this.mEmail = mEmail;
     }
 
-    private User(){
+    private User(Builder builder){
+        this.mId=builder.bId;
+        this.mFullName=builder.bFullName;
+        this.mUserName=builder.bUserName;
+        this.mHash=builder.bHash;
+        this.mBirth=builder.bBirth;
+        this.mEmail=builder.bEmail;
     }
-
 
 
     public static class Builder{
@@ -107,7 +116,7 @@ public class User {
         }
 
         public User build(){
-            return new User();
+            return new User(this);
         }
 
     }

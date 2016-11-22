@@ -1,7 +1,12 @@
 package com.group.improve.improvegrouptestproject.presenters;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.group.improve.improvegrouptestproject.R;
 import com.group.improve.improvegrouptestproject.SignInActivity;
+import com.group.improve.improvegrouptestproject.models.DTO.User;
+import com.group.improve.improvegrouptestproject.models.UserModel;
 
 /**
  *
@@ -10,13 +15,17 @@ public class SignInPresenter implements IPresenter {
 
     private SignInActivity mActivity;
 
+    private UserModel mModel;
+
     public SignInPresenter(SignInActivity mActivity){
+
+        this.mModel=new UserModel();
         this.mActivity= mActivity;
     }
 
     public boolean check(){
-        String userName=mActivity.getUserName().getText().toString();
-        String password=mActivity.getPassword().getText().toString();
+        String userName=mActivity.getUserNameValue();
+        String password=mActivity.getPasswordValue();
 
         //Check Username
         if(userName.isEmpty()){
@@ -39,7 +48,16 @@ public class SignInPresenter implements IPresenter {
 
     public void action(){
         if(this.check()){
+            User userWrap=mModel.getUser(mActivity.getUserNameValue());
 
+            if(userWrap!=null){
+                if(userWrap.compareHashes(mActivity.getPasswordValue()))
+                    Toast.makeText(mActivity,mActivity.getString(R.string.si_success),Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(mActivity,mActivity.getString(R.string.si_error_incorrect_username_pass),Toast.LENGTH_SHORT).show();
+
+            }else
+                Toast.makeText(mActivity,mActivity.getString(R.string.si_error_not_be_found),Toast.LENGTH_SHORT).show();
         }
     }
 

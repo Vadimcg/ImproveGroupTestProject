@@ -10,6 +10,9 @@
     <string name="si_error_username_empty">Field \'Username\'  can\'t be empty!</string>
     <string name="si_error_password_empty">Field \'Password\'  can\'t be empty!</string>
     <string name="si_error_not_be_found">User with such username and password wasn\'t found!</string>
+    <string name="si_error_incorrect_username_pass">Incorrected username or password!</string>
+
+    <string name="si_success">Success!</string>
 
     <!-- Strings related to registration -->
     <string name="r_title">Fine choice!\nYou\'re gonna love our app.</string>

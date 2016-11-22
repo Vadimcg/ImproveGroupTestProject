@@ -44,7 +44,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-                    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                    <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                         android:hint="@string/r_fullname_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                         android:layout_marginRight="@dimen/rigth_margin"
                         android:layout_marginLeft="@dimen/left_margin" />
 
-                    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                    <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                         android:hint="@string/r_birth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                         android:id="@+id/r_et_birth" />
 
 
-                    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                    <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                         android:hint="@string/r_email_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
 
 
 
-                    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                    <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                         android:hint="@string/r_username_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
 
 
 
-                    <com.group.improve.improvegrouptestproject.ImpGroupEditText
+                    <com.group.improve.improvegrouptestproject.elements.ImpGroupEditText
                         android:hint="@string/r_password_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

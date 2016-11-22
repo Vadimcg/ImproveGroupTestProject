@@ -7,23 +7,20 @@ import android.util.Log;
 
 import com.group.improve.improvegrouptestproject.models.DTO.User;
 
-import java.util.ArrayList;
-
 /**
  *
  */
 public class UserModel extends CommonTableHelper  {
 
-    private static final String KEY_ROW_ID = "id";
+    private static final String KEY_ROW_ID = "id_";
     private static final String KEY_ROW_FULL_NAME = "fullname";
     private static final String KEY_ROW_USER_NAME = "username";
     private static final String KEY_ROW_HASH    = "hash";
     private static final String KEY_ROW_BIRTH   = "birth";
     private static final String KEY_ROW_EMAIL   = "email";
 
-    public UserModel(DataBaseHelper dbhelper_){
+    public UserModel(){
         super();
-        dbhelper       =dbhelper_;
         this.TABLE_NAME="users";
     }
 
@@ -32,10 +29,16 @@ public class UserModel extends CommonTableHelper  {
 
         try{
             Cursor cursor = dbhelper.getMyDataBase()
-                    .rawQuery( "SELECT * FROM " +TABLE_NAME+" WHERE "+KEY_ROW_USER_NAME+"="+userName, null);
+                    .rawQuery( "SELECT * FROM " +TABLE_NAME+" WHERE "+KEY_ROW_USER_NAME+"='"+userName+"'", null);
 
             if (cursor != null) {
                 cursor.moveToFirst();
+
+                if(cursor.getCount()==0){
+                    cursor.close();
+                    return null;
+                }
+
 
 
                 return new User.Builder()
