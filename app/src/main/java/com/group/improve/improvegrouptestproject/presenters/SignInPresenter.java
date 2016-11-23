@@ -1,9 +1,11 @@
 package com.group.improve.improvegrouptestproject.presenters;
 
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.group.improve.improvegrouptestproject.R;
+import com.group.improve.improvegrouptestproject.RegistrationActivity;
 import com.group.improve.improvegrouptestproject.SignInActivity;
 import com.group.improve.improvegrouptestproject.models.DTO.User;
 import com.group.improve.improvegrouptestproject.models.UserModel;
@@ -59,6 +61,12 @@ public class SignInPresenter implements IPresenter {
             }else
                 Toast.makeText(mActivity,mActivity.getString(R.string.si_error_not_be_found),Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    public void registrationAction(){
+        Intent intent=new Intent(mActivity,RegistrationActivity.class);
+        mActivity.startActivity(intent);
     }
 
 

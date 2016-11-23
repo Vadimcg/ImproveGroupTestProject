@@ -12,6 +12,8 @@ import com.group.improve.improvegrouptestproject.models.DTO.User;
  */
 public class UserModel extends CommonTableHelper  {
 
+    public final static int ERROR_SAVE=-1;
+
     private static final String KEY_ROW_ID = "id_";
     private static final String KEY_ROW_FULL_NAME = "fullname";
     private static final String KEY_ROW_USER_NAME = "username";
@@ -45,9 +47,9 @@ public class UserModel extends CommonTableHelper  {
                         .setbId(cursor.getInt(cursor.getColumnIndex(KEY_ROW_ID)))
                         .setbFullName(cursor.getString(cursor.getColumnIndex(KEY_ROW_FULL_NAME)))
                         .setbUserName(cursor.getString(cursor.getColumnIndex(KEY_ROW_USER_NAME)))
-                        .setbHash(cursor.getString(cursor.getColumnIndex(KEY_ROW_HASH)))
+                        .setbHash(cursor.getInt(cursor.getColumnIndex(KEY_ROW_HASH)))
                         .setbEmail(cursor.getString(cursor.getColumnIndex(KEY_ROW_BIRTH)))
-                        .setbBirth(cursor.getInt(cursor.getColumnIndex(KEY_ROW_EMAIL)))
+                        .setbBirth(cursor.getString(cursor.getColumnIndex(KEY_ROW_EMAIL)))
                         .build();
             }
 

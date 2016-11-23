@@ -12,6 +12,7 @@
     <string name="si_error_not_be_found">User with such username and password wasn\'t found!</string>
     <string name="si_error_incorrect_username_pass">Incorrected username or password!</string>
 
+
     <string name="si_success">Success!</string>
 
     <!-- Strings related to registration -->
@@ -25,4 +26,6 @@
     <string name="r_error_username_empty">Field \'Username\'  can\'t be empty!</string>
     <string name="r_error_password_empty">Field \'Password\'  can\'t be empty!</string>
     <string name="r_error_email_empty">Field \'Email\'  can\'t be empty!</string>
+    <string name="r_error_name_is_using">Such username is already using!</string>
+    <string name="r_error_db_save">Opps,try again please!</string>
 </resources>

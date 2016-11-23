@@ -10,8 +10,8 @@ public class User {
     private int mId;
     private String mFullName;
     private String mUserName;
-    private String mHash;
-    private int mBirth;
+    private int mHash;
+    private String mBirth;
     private String mEmail;
 
     public int getmId() {
@@ -38,23 +38,23 @@ public class User {
         this.mUserName = mUserName;
     }
 
-    public String getmHash() {
+    public int getmHash() {
         return mHash;
     }
 
     public boolean compareHashes(String hash){
-        return this.mHash.equals(hash.hashCode());
+        return this.mHash==hash.hashCode();
     }
 
-    public void setmHash(String mHash) {
+    public void setmHash(int mHash) {
         this.mHash = mHash;
     }
 
-    public int getmBirth() {
+    public String getmBirth() {
         return mBirth;
     }
 
-    public void setmBirth(int mBirth) {
+    public void setmBirth(String mBirth) {
         this.mBirth = mBirth;
     }
 
@@ -81,8 +81,8 @@ public class User {
         private int bId;
         private String bFullName;
         private String bUserName;
-        private String bHash;
-        private int bBirth;
+        private int bHash;
+        private String bBirth;
         private String bEmail;
 
         public Builder setbId(int bId) {
@@ -100,18 +100,23 @@ public class User {
             return this;
         }
 
-        public Builder setbHash(String bHash) {
+        public Builder setbHash(int bHash) {
             this.bHash = bHash;
             return this;
         }
 
-        public Builder setbBirth(int bBirth) {
+        public Builder setbBirth(String bBirth) {
             this.bBirth = bBirth;
             return this;
         }
 
         public Builder setbEmail(String bEmail) {
             this.bEmail = bEmail;
+            return this;
+        }
+
+        public Builder setbPass(String pass) {
+            this.bHash = pass.hashCode();
             return this;
         }
 

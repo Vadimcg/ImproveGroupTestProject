@@ -1,7 +1,9 @@
 package com.group.improve.improvegrouptestproject;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
+import android.widget.TextView;
 
 import com.group.improve.improvegrouptestproject.elements.ImpGroupEditText;
 import com.group.improve.improvegrouptestproject.presenters.SignInPresenter;
@@ -44,7 +46,18 @@ public class SignInActivity extends ImpGroupActivity{
                 SignInActivity.this.mPresenter.action();
             }
         });
+
+
+        TextView sTvReg=(TextView)this.findViewById(R.id.si_tv_reg);
+        sTvReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((SignInPresenter)mPresenter).registrationAction();
+            }
+        });
     }
+
+
 
 
 }

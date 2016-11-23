@@ -48,6 +48,7 @@
                         android:hint="@string/r_fullname_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
                         android:maxLength="20"
                         android:background="@color/green"
                         android:theme="@style/EditTextTheme"
@@ -61,6 +62,7 @@
                         android:hint="@string/r_birth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
                         android:maxLength="20"
                         android:background="@color/green"
                         android:theme="@style/EditTextTheme"
@@ -77,12 +79,15 @@
                         android:layout_height="wrap_content"
                         android:maxLength="20"
                         android:background="@color/green"
+                        android:singleLine="true"
                         android:theme="@style/EditTextTheme"
                         style="@style/EditTextTheme"
                         android:layout_marginRight="@dimen/rigth_margin"
                         android:layout_marginLeft="@dimen/left_margin"
                         android:layout_marginTop="@dimen/space_between"
-                        android:id="@+id/r_et_email" />
+                        android:id="@+id/r_et_email"
+                        android:autoText="false"
+                        android:autoLink="email" />
 
 
 
@@ -93,6 +98,7 @@
                         android:maxLength="20"
                         android:background="@color/green"
                         android:theme="@style/EditTextTheme"
+                        android:singleLine="true"
                         style="@style/EditTextTheme"
                         android:layout_marginRight="@dimen/rigth_margin"
                         android:layout_marginLeft="@dimen/left_margin"
@@ -108,6 +114,7 @@
                         android:maxLength="20"
                         android:background="@color/green"
                         android:theme="@style/EditTextTheme"
+                        android:singleLine="true"
                         style="@style/EditTextTheme"
                         android:layout_marginRight="@dimen/rigth_margin"
                         android:layout_marginLeft="@dimen/left_margin"
