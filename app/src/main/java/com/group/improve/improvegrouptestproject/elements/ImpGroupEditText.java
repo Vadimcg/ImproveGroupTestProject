@@ -90,7 +90,7 @@ public class ImpGroupEditText extends EditText
 
         linePaint=new Paint();
         linePaint.setColor(getResources().getColor(R.color.greyBack));
-        linePaint.setStrokeWidth(4f);
+        linePaint.setStrokeWidth(3f);
 
         limit_text_paint= new Paint();
         limit_text_paint.setColor(getResources().getColor(R.color.greyBack));
