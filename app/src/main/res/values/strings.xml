@@ -26,6 +26,7 @@
     <string name="r_error_username_empty">Field \'Username\'  can\'t be empty!</string>
     <string name="r_error_password_empty">Field \'Password\'  can\'t be empty!</string>
     <string name="r_error_email_empty">Field \'Email\'  can\'t be empty!</string>
+    <string name="r_error_email_not_valid">Field \'Email\' is not valid!</string>
     <string name="r_error_name_is_using">Such username is already using!</string>
     <string name="r_error_db_save">Opps,try again please!</string>
 </resources>

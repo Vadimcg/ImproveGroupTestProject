@@ -51,6 +51,7 @@
                 android:theme="@style/EditTextTheme"
                 style="@style/EditTextTheme"
                 android:id="@+id/si_et_username"
+                android:singleLine="true"
                 android:layout_marginTop="@dimen/top_margin"
                 android:layout_marginRight="@dimen/rigth_margin"
                 android:layout_marginLeft="@dimen/left_margin" />
@@ -60,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="20"
+                android:singleLine="true"
                 android:background="@color/green"
                 android:theme="@style/EditTextTheme"
                 style="@style/EditTextTheme"

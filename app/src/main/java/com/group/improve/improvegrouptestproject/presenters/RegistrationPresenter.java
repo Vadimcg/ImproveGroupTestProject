@@ -2,6 +2,7 @@ package com.group.improve.improvegrouptestproject.presenters;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import com.group.improve.improvegrouptestproject.models.UserModel;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -29,6 +32,7 @@ public class RegistrationPresenter implements IPresenter {
     private RegistrationActivity mActivity;
 
     private UserModel mModel;
+
 
     public RegistrationPresenter(RegistrationActivity mActivity){
 
@@ -72,11 +76,16 @@ public class RegistrationPresenter implements IPresenter {
         }
 
 
-
         //Check email
         if(email.isEmpty()){
             mActivity.getmEmail().setError(
                     mActivity.getString(R.string.r_error_email_empty));
+            return false;
+        }
+
+        if(this.isEmailNotValid(email)){
+            mActivity.getmEmail().setError(
+                    mActivity.getString(R.string.r_error_email_not_valid));
             return false;
         }
 
@@ -127,6 +136,28 @@ public class RegistrationPresenter implements IPresenter {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         mActivity.getmBirth().setText(sdf.format(mCalendar.getTime()));
+    }
+
+
+    private boolean isEmailNotValid(String email)
+    {
+        String regExpn =
+                "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                        +"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                        +"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                        +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
+
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(regExpn,Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+
+        if(matcher.matches())
+            return false;
+        else
+            return true;
     }
 
 }
