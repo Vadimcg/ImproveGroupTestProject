@@ -77,6 +77,18 @@ public class UserModel extends CommonTableHelper  {
         return (int)dbhelper.getMyDataBase().insert(TABLE_NAME, null, initialValues);
     }
 
+    public int updateUser(User data){
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(KEY_ROW_FULL_NAME,         data.getmFullName());
+        initialValues.put(KEY_ROW_USER_NAME,      data.getmUserName());
+        initialValues.put(KEY_ROW_HASH,    data.getmHash());
+        initialValues.put(KEY_ROW_BIRTH,    data.getmBirth());
+        initialValues.put(KEY_ROW_EMAIL,  data.getmEmail());
+
+        return (int)dbhelper.getMyDataBase().update(TABLE_NAME, initialValues, KEY_ROW_ID + "=" + data.getmId(), null);
+    }
+
 
 
 
